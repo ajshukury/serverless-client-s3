@@ -249,7 +249,7 @@ module.exports = function(S) {
 
         let params = {
           Bucket: _this.bucketName,
-          Key: fileKey,
+          Key: fileKey.replace(/\\/g, '/'), 
           Body: fileBuffer,
           ContentType: mime.lookup(filePath)
         };
